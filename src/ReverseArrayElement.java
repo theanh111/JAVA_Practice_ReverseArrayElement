@@ -26,10 +26,22 @@ public class ReverseArrayElement {
             System.out.print(array[j] + "\t");
         }
 
-        for (int j = 0; j < array.length / 2; j++) {
-            int temp = array[j];
-            array[j] = array[size - 1 - j];
-            array[size - 1 - j] = temp;
+        // // Cach reverse 1:
+//        for (int j = 0; j < array.length / 2; j++) {
+//            int temp = array[j];
+//            array[j] = array[size - 1 - j];
+//            array[size - 1 - j] = temp;
+//        }
+
+// Cach reverse 2:
+        int first = 0;
+        int last = array.length - 1;
+        while (first < last) {
+            int temp = array[first];
+            array[first] = array[last];
+            array[last] = temp;
+            first++;
+            last--;
         }
 
         System.out.println();
